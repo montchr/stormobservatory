@@ -3,6 +3,7 @@ include:
 
 plugins:
   - chroma
+  - convert
   - discogs
   - edit
   - embedart
@@ -11,8 +12,16 @@ plugins:
   - info
   - inline
   - lastgenre
-  # - plexupdate
   - replaygain
+
+threaded: true
+
+convert:
+    auto: false
+    ffmpeg: /usr/bin/ffmpeg
+    opts: -ab 320k -ac 2 -ar 48000
+    max_bitrate: 320
+    threads: 1
 
 paths:
   default: $albumartist/$album%aunique{}/%if{$multidisc,Disc $disc/}$track - $title
@@ -20,19 +29,21 @@ paths:
 
 # Support for Plex
 # https://forums.plex.tv/t/music-which-version-of-id3-tags-does-the-plex-scanner-inspect/193379/7
-id3v23: yes
+id3v23: true
 
 item_fields:
   multidisc: 1 if disctotal > 1 else 0
   artist_differs: 1 if albumartist != artist else 0
 
 import:
-  bell: yes
-  copy: no
+  bell: true
+  copy: false
   languages:
     - en
-  log: ~/.config/beets/beets.log
-  move: yes
+  move: true
+  quiet_fallback: skip
+  timid: false
+  write: true
 
 match:
   # max_rec:
@@ -54,7 +65,7 @@ original_date: yes
 
 # Play it safe with filenames
 asciify_paths: yes
-max_filename_length: 150
+max_filename_length: 255
 
 ui:
   color: yes
@@ -84,13 +95,13 @@ fetchart:
 # LastGenre plugin
 # https://beets.readthedocs.io/en/stable/plugins/lastgenre.html
 lastgenre:
-  auto: yes
+  auto: true
   canonical: ~/.config/beets/canonical.yaml
   count: 4
   fallback: ''
   force: yes
   min_weight: 6
-  prefer_specific: no
+  prefer_specific: false
   separator: '; '
   source: album
   whitelist: ~/.config/beets/allowlist.txt
@@ -100,3 +111,15 @@ lastgenre:
 replaygain:
   auto: yes
   backend: command
+
+replace:
+    '^\.': _
+    '[\x00-\x1f]': _
+    '[<>:"\?\*\|]': _
+    '[\xE8-\xEB]': e
+    '[\xEC-\xEF]': i
+    '[\xE2-\xE6]': a
+    '[\xF2-\xF6]': o
+    '[\xF8]': o
+    '\.$': _
+    '\s+$': ''

@@ -1,5 +1,8 @@
 library: ~/Music/library/library.db
 directory: ~/Music/library/files
 
+import:
+  log: ~/.config/beets/beets.log
+
 importfeeds:
   dir: ~/Music/library/imports
