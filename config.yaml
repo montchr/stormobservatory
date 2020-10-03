@@ -40,7 +40,7 @@ import:
   copy: false
   languages:
     - en
-  log: beet.log
+  log: ~/.config/beets/beet.log
   move: true
   quiet_fallback: skip
   timid: false
@@ -97,7 +97,7 @@ fetchart:
 # https://beets.readthedocs.io/en/stable/plugins/lastgenre.html
 lastgenre:
   auto: true
-  canonical: canonical.yaml
+  canonical: ~/.config/beets/canonical.yaml
   count: 4
   fallback: ''
   force: yes
@@ -105,7 +105,7 @@ lastgenre:
   prefer_specific: false
   separator: '; '
   source: album
-  whitelist: allowlist.txt
+  whitelist: ~/.config/beets/allowlist.txt
 
 # ReplayGain plugin
 # https://beets.readthedocs.io/en/stable/plugins/replaygain.html
