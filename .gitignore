@@ -1,3 +1,8 @@
 *.log
 *.blb
 /local-config.yaml
+.bash_history
+.cache
+/.config
+discogs_token.json
+state.pickle
