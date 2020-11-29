@@ -38,6 +38,7 @@ item_fields:
 import:
   bell: true
   copy: false
+  incremental: true
   languages:
     - en
   log: ~/.config/beets/beet.log
@@ -52,7 +53,7 @@ match:
   #   track_length: medium
   #   year: medium
   preferred:
-    countries: ['US', 'UK|GB', 'DE', 'NL']
+    countries: ['US', 'UK|GB', 'DE', 'NL', 'SE']
     media: ['CD', 'Digital Media|File']
   strong_rec_thresh: 0.15
   medium_red_thresh: 0.25
