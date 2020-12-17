@@ -39,7 +39,8 @@ item_fields:
 import:
   bell: true
   copy: false
-  incremental: true
+  # Doesn't allow upgrades.
+  # incremental: true
   languages:
     - en
   log: ~/.config/beets/beet.log
