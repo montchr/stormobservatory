@@ -12,6 +12,7 @@ plugins:
   - info
   - inline
   - lastgenre
+  - plexupdate
   - replaygain
 
 threaded: true
