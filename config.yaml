@@ -26,7 +26,7 @@ convert:
 
 paths:
   default: $albumartist/$album%aunique{}/%if{$multidisc,Disc $disc/}$track - $title
-  comp: Various Artists/$album%aunique{}/%if{$multidisc,Disc $disc/}$track - $title
+  comp: $albumartist/$album%aunique{}/%if{$multidisc,Disc $disc/}$track - $title
 
 # Support for Plex
 # https://forums.plex.tv/t/music-which-version-of-id3-tags-does-the-plex-scanner-inspect/193379/7
