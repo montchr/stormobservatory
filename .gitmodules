@@ -1,3 +1,0 @@
-[submodule "beets"]
-	path = beets
-	url = git@github.com:beetbox/beets.git
