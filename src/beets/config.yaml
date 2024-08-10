@@ -51,8 +51,8 @@ import:
 
 match:
   preferred:
-    countries: ["US", "UK|GB", "DE", "NL", "SE"]
-    media: ["Digital Media|File", "CD"]
+    countries: ['US', 'UK|GB', 'DE', 'NL', 'SE']
+    media: ['Digital Media|File', 'CD']
   strong_rec_thresh: 0.15
   medium_red_thresh: 0.25
   rec_gap_thresh: 0.25
@@ -98,11 +98,11 @@ lastgenre:
   auto: true
   canonical: ~/.config/beets/canonical.yaml
   count: 4
-  fallback: ""
+  fallback: ''
   force: yes
   min_weight: 6
   prefer_specific: false
-  separator: "; "
+  separator: '; '
   source: album
   whitelist: ~/.config/beets/allowlist.txt
 
@@ -122,4 +122,4 @@ replace:
   '[\xF2-\xF6]': o
   '[\xF8]': o
   '\.$': _
-  '\s+$': ""
+  '\s+$': ''
