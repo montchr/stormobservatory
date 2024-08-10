@@ -7,3 +7,5 @@
 discogs_token.json
 state.pickle
 /cb/
+/.data/
+/.pre-commit-config.yaml

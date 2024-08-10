@@ -1,0 +1,3 @@
+*.min.*
+# Generated
+private/migrate/*.md
