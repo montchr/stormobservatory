@@ -6,3 +6,4 @@
 /.config
 discogs_token.json
 state.pickle
+/cb/
