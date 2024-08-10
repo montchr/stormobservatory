@@ -28,6 +28,7 @@
           ${config.pre-commit.installationScript}
         '';
         nativeBuildInputs = commonPkgs ++ [
+          pkgs.recyclarr
           config.pre-commit.settings.hooks.markdownlint.package
           config.pre-commit.settings.hooks.yamllint.package
 
