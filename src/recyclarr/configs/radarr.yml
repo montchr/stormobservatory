@@ -1,10 +1,18 @@
+---
 radarr:
-  uhd-bluray-web:
+  movies-main:
     base_url: !secret radarr_url
     api_key: !secret radarr_api_key
 
     include:
       - template: radarr-quality-definition-movie
+      # Anime
+      - template: radarr-quality-profile-anime
+      - template: radarr-custom-formats-anime
+      # HD Bluray + WEB
+      - template: radarr-quality-profile-hd-bluray-web
+      - template: radarr-custom-formats-hd-bluray-web
+      # UHD Bluray + WEB
       - template: radarr-quality-profile-uhd-bluray-web
       - template: radarr-custom-formats-uhd-bluray-web
 
@@ -49,12 +57,12 @@ radarr:
 
       - trash_ids:
           # Uncomment the next six lines to allow x265 HD releases with HDR/DV
-          # - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
-        # assign_scores_to:
-          # - name: UHD Bluray + WEB
-            # score: 0
-      # - trash_ids:
-          # - 839bea857ed2c0a8e084f3cbdbd65ecb # x265 (no HDR/DV)
+          - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
+        assign_scores_to:
+          - name: UHD Bluray + WEB
+            score: 0
+      - trash_ids:
+          - 839bea857ed2c0a8e084f3cbdbd65ecb # x265 (no HDR/DV)
         assign_scores_to:
           - name: UHD Bluray + WEB
 
@@ -77,3 +85,27 @@ radarr:
           # - 25c12f78430a3a23413652cbd1d48d77 # SDR (no WEBDL)
         assign_scores_to:
           - name: UHD Bluray + WEB
+
+      - trash_ids:
+          - 064af5f084a0a24458cc8ecd3220f93f # Uncensored
+        assign_scores_to:
+          - name: Remux-1080p - Anime
+            score: 0 # Adjust scoring as desired
+
+      - trash_ids:
+          - a5d148168c4506b55cf53984107c396e # 10bit
+        assign_scores_to:
+          - name: Remux-1080p - Anime
+            score: 0 # Adjust scoring as desired
+
+      - trash_ids:
+          - 4a3b087eea2ce012fcc1ce319259a3be # Anime Dual Audio
+        assign_scores_to:
+          - name: Remux-1080p - Anime
+            score: 0 # Adjust scoring as desired
+
+    media_naming:
+      folder: jellyfin-tmdb
+      movie:
+        rename: true
+        standard: jellyfin-tmdb

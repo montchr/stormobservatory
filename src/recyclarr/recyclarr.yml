@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/recyclarr/recyclarr/master/schemas/config-schema.json
+
+# https://recyclarr.dev/wiki/yaml/config-reference/
+#
+# Want a more flexible file layout?
+#
+# See: https://recyclarr.dev/wiki/file-structure/
+---
+sonarr:
+  shows-main:
+    base_url: !secret sonarr_url
+    api_key: !secret sonarr_api_key
+
+radarr:
+  movies-main:
+    base_url: !secret radarr_url
+    api_key: !secret radarr_api_key
